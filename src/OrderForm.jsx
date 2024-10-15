@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import OrderInfo from './OrderInfo'; // Varmista, että tämä komponentti on olemassa
-
+import OrderInfo from './OrderInfo'; 
 const OrderForm = () => {
     const productsList = [
         { productName: 'iPhone 14', productPrice: 999 },

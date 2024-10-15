@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './App.css';
 import OrderForm from './OrderForm'; 
@@ -9,7 +8,7 @@ function App() {
         <div className="app-container">
             <header className="header-container">
                 <img src={logo} alt="Product Order" className="header-image" />
-                <h1>Welcome to Big man page</h1>
+                <h1>Welcome to Big Man Page</h1>
             </header>
             <OrderForm />
         </div>
