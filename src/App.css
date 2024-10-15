@@ -1,42 +1,219 @@
+/*App.css*/
+/* Container Styling */
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Header and Image Styling */
+.header-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 1rem; 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.header-image {
+  max-width: 400px; 
+  height: auto; 
+  margin-right: 1rem; 
+  border-radius: 8px; 
+  opacity: 0; 
+  animation: fadeIn 1s forwards; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 4px 10px rgb(0, 0, 0); 
+}
+
+@keyframes fadeIn {
   to {
-    transform: rotate(360deg);
+    opacity: 1; 
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.header-image:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2.5rem; 
+  color: #333; 
+  margin: 0;
+}
+
+/* Component Image Styling */
+#componentImage {
+  width: 80%; 
+  max-width: 500px; 
+  height: auto; 
+  border-radius: 15px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+  margin: 20px auto; 
+  transition: transform 0.3s ease; 
+}
+
+#componentImage:hover {
+  transform: scale(1.05); 
+}
+
+/* Table Styling */
+table.tb {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+table.tb th,
+table.tb td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table.tb th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+table.tb td {
+  border-top: 1px solid #dddddd;
+}
+
+/* Hover Effect for Table Rows */
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styling */
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Select and Quantity Input Styling */
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+span {
+  display: inline-block;
+  width: 2rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.quantity-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; 
+  }
+
+  .header-image {
+    max-width: 100px; 
+  }
+
+  #componentImage {
+    width: 100%; 
+  }
+
+  table.tb,
+  select {
+    width: 100%; 
   }
 }
 
-.card {
-  padding: 2em;
+/* Order Form Styling */
+.order-form {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.139);
 }
 
-.read-the-docs {
-  color: #888;
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-container button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.quantity-container button:hover {
+  background-color: #388e3c;
+}
+
+.order-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Table within Order Info */
+table.tb {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table.tb th,
+table.tb td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table.tb th {
+  background-color: #4CAF50;
+  color: white;
 }
