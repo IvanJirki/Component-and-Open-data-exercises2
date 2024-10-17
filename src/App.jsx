@@ -15,7 +15,7 @@ function App() {
                 <div className="app-container">
                     <header className="header-container">
                         <img src={logo} alt="Product Order" className="header-image" />
-                        <h1>Tervetuloa Big Man sivustolle</h1>
+                        <h1>Kun Hulk juo, se ei ole vain juoma – se on tunne</h1>
                         <nav className="navbar">
                             <Link to="/" className="nav-button">Etusivu</Link>
                             <Link to="/order" className="nav-button">Tilauslomake</Link>

@@ -1,4 +1,3 @@
-// OrderForm.js
 import React, { useState, useContext } from 'react';
 import OrderInfo from './OrderInfo';
 import { OrderContext } from './OrderContext';
@@ -7,10 +6,22 @@ const OrderForm = () => {
     const cocktailsList = [
         { cocktailName: 'Margarita', cocktailPrice: 10 },
         { cocktailName: 'Mojito', cocktailPrice: 8 },
-        { cocktailName: 'Pina Colada', cocktailPrice: 9 }
+        { cocktailName: 'Pina Colada', cocktailPrice: 9 },
+        { cocktailName: 'Cosmopolitan', cocktailPrice: 12 },
+        { cocktailName: 'Daiquiri', cocktailPrice: 10 },
+        { cocktailName: 'Old Fashioned', cocktailPrice: 15 },
+        { cocktailName: 'Whiskey Sour', cocktailPrice: 11 },
+        { cocktailName: 'Mai Tai', cocktailPrice: 13 },
+        { cocktailName: 'Long Island Iced Tea', cocktailPrice: 14 },
+        { cocktailName: 'Tequila Sunrise', cocktailPrice: 9 },
+        { cocktailName: 'Bellini', cocktailPrice: 10 },
+        { cocktailName: 'Moscow Mule', cocktailPrice: 12 },
+        { cocktailName: 'Sangria', cocktailPrice: 11 },
+        { cocktailName: 'Sex on the Beach', cocktailPrice: 12 },
+        { cocktailName: 'Blue Lagoon', cocktailPrice: 10 },
     ];
 
-    const { orderedDrinks, addOrder } = useContext(OrderContext);
+    const { addOrder } = useContext(OrderContext);
 
     const [selectedCocktailIndex, setSelectedCocktailIndex] = useState(0);
     const [quantity, setQuantity] = useState(0);
@@ -54,7 +65,7 @@ const OrderForm = () => {
 
             <button onClick={handleOrder}>Tilaa</button>
 
-            <OrderInfo orderedDrinks={orderedDrinks} />
+            <OrderInfo />
         </div>
     );
 };

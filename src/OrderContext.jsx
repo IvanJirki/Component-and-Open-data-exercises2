@@ -10,8 +10,16 @@ export const OrderProvider = ({ children }) => {
         setOrderedDrinks((prevOrders) => [...prevOrders, newOrder]);
     };
 
+    const removeOrder = (index) => {
+        setOrderedDrinks((prevOrders) => prevOrders.filter((_, i) => i !== index));
+    };
+
+    const clearOrders = () => {
+        setOrderedDrinks([]);
+    };
+
     return (
-        <OrderContext.Provider value={{ orderedDrinks, addOrder }}>
+        <OrderContext.Provider value={{ orderedDrinks, addOrder, removeOrder, clearOrders }}>
             {children}
         </OrderContext.Provider>
     );
