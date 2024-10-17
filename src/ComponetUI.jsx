@@ -1,4 +1,3 @@
-/*ComponetUI.jsx*/
 import React from 'react';
 
 function ComponentUI({ image, title }) {

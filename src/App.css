@@ -53,7 +53,6 @@
   }
 }
 
-/* Heading Styling with Slide-In Animation and Shadow */
 h1 {
   font-size: 3rem; 
   font-weight: 700;
@@ -233,4 +232,84 @@ table.tb td {
 table.tb th {
   background-color: #4CAF50;
   color: white;
+}
+
+/* Styling for OpenData Component */
+.open-data {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.open-data h3 {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+.open-data input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.open-data button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.open-data button:hover {
+  background-color: #388e3c;
+}
+
+/* Styling for Cocktail List */
+.cocktail-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual Cocktail Item Styling */
+.cocktail-item {
+  width: 280px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.cocktail-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cocktail-item h3 {
+  color: #4CAF50;
+}
+
+.cocktail-item p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Error styling */
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
