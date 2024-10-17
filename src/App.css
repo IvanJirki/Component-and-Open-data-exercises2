@@ -1,6 +1,3 @@
-/*App.css*/
-
-/* Container Styling */
 #root {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,18 +8,18 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
-/* Header and Image Styling */
 .header-container {
   display: flex; 
+  flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  margin-bottom: 1rem; 
+  margin-bottom: 2rem; 
 }
 
 .header-image {
   max-width: 400px; 
   height: auto; 
-  margin-right: 1rem; 
+  margin: 1rem 0; 
   border-radius: 8px; 
   opacity: 0; 
   animation: fadeIn 1s forwards; 
@@ -41,7 +38,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
 }
 
-/* Heading Styling with Slide-In Animation */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -54,31 +50,42 @@
 }
 
 h1 {
-  font-size: 3rem; 
+  font-size: 2.5rem; 
   font-weight: 700;
   color: #4CAF50; 
-  margin: 0;
+  margin: 0.5rem 0; 
   animation: slideIn 0.8s ease-out;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.262); 
 }
 
-
-/* Component Image Styling */
-#componentImage {
-  width: 80%; 
-  max-width: 500px; 
-  height: auto; 
-  border-radius: 15px; 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
-  margin: 20px auto; 
-  transition: transform 0.3s ease; 
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin-top: 1rem; 
+    margin-bottom: 2rem; 
 }
 
-#componentImage:hover {
-  transform: scale(1.05); 
+.nav-button {
+    padding: 0.5rem 1.5rem; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
-/* Table Styling */
+.nav-button:hover {
+    background-color: #5ff467; 
+    transform: scale(1.05); 
+}
+
+.nav-button:active {
+    transform: scale(0.95); 
+}
+
 table.tb {
   width: 100%;
   margin-top: 1.5rem;
@@ -103,12 +110,10 @@ table.tb td {
   border-top: 1px solid #dddddd;
 }
 
-/* Hover Effect for Table Rows */
 tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Button Styling */
 button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -129,7 +134,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Select and Quantity Input Styling */
 select {
   padding: 0.5rem;
   font-size: 1rem;
@@ -160,7 +164,6 @@ span {
   margin-top: 1rem;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem; 
@@ -170,17 +173,12 @@ span {
     max-width: 100px; 
   }
 
-  #componentImage {
-    width: 100%; 
-  }
-
   table.tb,
   select {
     width: 100%; 
   }
 }
 
-/* Order Form Styling */
 .order-form {
   margin: 20px auto;
   padding: 20px;
@@ -215,7 +213,6 @@ span {
   text-align: left;
 }
 
-/* Table within Order Info */
 table.tb {
   width: 100%;
   border-collapse: collapse;
@@ -234,7 +231,6 @@ table.tb th {
   color: white;
 }
 
-/* Styling for OpenData Component */
 .open-data {
   margin: 20px auto;
   padding: 20px;
@@ -271,7 +267,6 @@ table.tb th {
   background-color: #388e3c;
 }
 
-/* Styling for Cocktail List */
 .cocktail-list {
   display: flex;
   flex-wrap: wrap;
@@ -280,7 +275,6 @@ table.tb th {
   margin-top: 1rem;
 }
 
-/* Individual Cocktail Item Styling */
 .cocktail-item {
   width: 280px;
   padding: 15px;
@@ -299,17 +293,11 @@ table.tb th {
 }
 
 .cocktail-item h3 {
-  color: #4CAF50;
+  color: #4CAF50; /* Otsikon väri */
 }
 
 .cocktail-item p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Error styling */
-.error {
-  color: red;
-  font-size: 1rem;
-  margin-top: 1rem;
+  font-size: 0.9rem; 
+  line-height: 1.5; 
+  color: #333; /* Tekstin väri */
 }

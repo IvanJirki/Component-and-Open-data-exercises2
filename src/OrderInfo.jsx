@@ -1,24 +1,31 @@
+// OrderInfo.js
 import React from 'react';
 
-const OrderInfo = ({ productName, productPrice, quantity }) => {
-    const totalPrice = productPrice * quantity;
+const OrderInfo = ({ orderedDrinks }) => {
+    const totalPrice = orderedDrinks.reduce((sum, drink) => sum + drink.totalPrice, 0);
 
     return (
         <div className="order-info">
-            <h3>Order Details</h3>
+            <h3>Tilaustiedot</h3>
             <table className='tb'>
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
+                        <th>Tuote</th>
+                        <th>Määrä</th>
+                        <th>Yhteishinta</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {orderedDrinks.map((drink, index) => (
+                        <tr key={index}>
+                            <td>{drink.cocktailName}</td>
+                            <td>{drink.quantity}</td>
+                            <td>{drink.totalPrice}€</td>
+                        </tr>
+                    ))}
                     <tr>
-                        <td>{productName}</td>
-                        <td>{quantity}</td>
-                        <td>{totalPrice}€</td>
+                        <td colSpan="2"><strong>Yhteensä</strong></td>
+                        <td><strong>{totalPrice}€</strong></td>
                     </tr>
                 </tbody>
             </table>

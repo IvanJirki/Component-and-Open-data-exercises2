@@ -1,45 +1,60 @@
-import React, { useState } from 'react';
-import OrderInfo from './OrderInfo'; 
+// OrderForm.js
+import React, { useState, useContext } from 'react';
+import OrderInfo from './OrderInfo';
+import { OrderContext } from './OrderContext';
+
 const OrderForm = () => {
-    const productsList = [
-        { productName: 'iPhone 14', productPrice: 999 },
-        { productName: 'Samsung Galaxy S22', productPrice: 899 },
-        { productName: 'Google Pixel 6', productPrice: 799 }
+    const cocktailsList = [
+        { cocktailName: 'Margarita', cocktailPrice: 10 },
+        { cocktailName: 'Mojito', cocktailPrice: 8 },
+        { cocktailName: 'Pina Colada', cocktailPrice: 9 }
     ];
 
-    const [selectedProductIndex, setSelectedProductIndex] = useState(0);
+    const { orderedDrinks, addOrder } = useContext(OrderContext);
+
+    const [selectedCocktailIndex, setSelectedCocktailIndex] = useState(0);
     const [quantity, setQuantity] = useState(0);
 
-    const selectedProduct = productsList[selectedProductIndex];
+    const selectedCocktail = cocktailsList[selectedCocktailIndex];
+
+    const handleOrder = () => {
+        if (quantity > 0) {
+            const newOrder = {
+                cocktailName: selectedCocktail.cocktailName,
+                quantity,
+                totalPrice: selectedCocktail.cocktailPrice * quantity
+            };
+            addOrder(newOrder);
+            setQuantity(0);
+        }
+    };
 
     return (
         <div className="order-form">
-            <h3>Select Product</h3>
-            <label htmlFor="product-select">Product: </label>
+            <h3>Valitse cocktail</h3>
+            <label htmlFor="cocktail-select">Cocktail: </label>
             <select
-                id="product-select"
-                value={selectedProductIndex}
-                onChange={(e) => setSelectedProductIndex(Number(e.target.value))}
+                id="cocktail-select"
+                value={selectedCocktailIndex}
+                onChange={(e) => setSelectedCocktailIndex(Number(e.target.value))}
             >
-                {productsList.map((product, index) => (
-                    <option key={product.productName} value={index}>
-                        {product.productName} ({product.productPrice}€)
+                {cocktailsList.map((cocktail, index) => (
+                    <option key={cocktail.cocktailName} value={index}>
+                        {cocktail.cocktailName} ({cocktail.cocktailPrice}€)
                     </option>
                 ))}
             </select>
 
             <div className="quantity-container">
-                <label htmlFor="quantity">Quantity: </label>
+                <label htmlFor="quantity">Määrä: </label>
                 <button onClick={() => setQuantity(Math.max(quantity - 1, 0))}>-</button>
                 <span>{quantity}</span>
                 <button onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
 
-            <OrderInfo 
-                productName={selectedProduct.productName}
-                productPrice={selectedProduct.productPrice}
-                quantity={quantity}
-            />
+            <button onClick={handleOrder}>Tilaa</button>
+
+            <OrderInfo orderedDrinks={orderedDrinks} />
         </div>
     );
 };
