@@ -5,85 +5,94 @@
   text-align: center;
   background-color: #f4f4f9;
   border-radius: 8px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif; /* Google Font */
 }
 
 .header-container {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
 }
 
 .header-image {
-  max-width: 400px; 
-  height: auto; 
-  margin: 1rem 0; 
-  border-radius: 8px; 
-  opacity: 0; 
-  animation: fadeIn 1s forwards; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  box-shadow: 0 4px 10px rgb(0, 0, 0); 
+  max-width: 400px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; 
+      opacity: 1;
   }
 }
 
 .header-image:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
 h1 {
-  font-size: 2.5rem; 
+  font-size: 3rem; /* Larger font size */
   font-weight: 700;
-  color: #4CAF50; 
-  margin: 0.5rem 0; 
+  color: #4CAF50;
+  margin: 0.5rem 0;
   animation: slideIn 0.8s ease-out;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.262); 
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px; /* Spacing between letters */
+  text-transform: uppercase; /* Uppercase letters for emphasis */
+  background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  padding: 10px 0; /* Padding for spacing */
+  border-bottom: 4px solid #8BC34A; /* Bottom border */
 }
 
 .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 2rem; 
-    margin-top: 1rem; 
-    margin-bottom: 2rem; 
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .nav-button {
-    padding: 0.5rem 1.5rem; 
-    background-color: #4CAF50; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: background-color 0.3s, transform 0.3s; 
+  padding: 0.5rem 1.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow to buttons */
 }
 
 .nav-button:hover {
-    background-color: #5ff467; 
-    transform: scale(1.05); 
+  background-color: #5ff467;
+  transform: scale(1.05);
 }
 
 .nav-button:active {
-    transform: scale(0.95); 
+  transform: scale(0.95);
 }
 
 table.tb {
@@ -104,6 +113,7 @@ table.tb th {
   background-color: #4CAF50;
   color: white;
   font-weight: bold;
+  text-transform: uppercase; /* Uppercase for table headers */
 }
 
 table.tb td {
@@ -166,16 +176,20 @@ span {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem; 
+      font-size: 2rem; /* Responsive font size */
   }
 
   .header-image {
-    max-width: 100px; 
+      max-width: 100px; /* Responsive image size */
   }
 
   table.tb,
   select {
-    width: 100%; 
+      width: 100%; /* Full width for small screens */
+  }
+
+  .nav-button {
+      padding: 0.5rem 1rem; /* Adjust button size */
   }
 }
 
@@ -284,6 +298,11 @@ table.tb th {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   margin-bottom: 1rem;
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.cocktail-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 
 .cocktail-image {
@@ -297,7 +316,7 @@ table.tb th {
 }
 
 .cocktail-item p {
-  font-size: 0.9rem; 
-  line-height: 1.5; 
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #333; /* Tekstin väri */
 }
