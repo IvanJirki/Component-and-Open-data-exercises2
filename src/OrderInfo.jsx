@@ -1,4 +1,4 @@
-// OrderInfo.js
+/*OrderInfo.jsx*/
 import React from 'react';
 
 const OrderInfo = ({ productName, productPrice, quantity }) => {
