@@ -1,4 +1,3 @@
-/* Container Styling */
 #root {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,78 +5,96 @@
   text-align: center;
   background-color: #f4f4f9;
   border-radius: 8px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif; /* Google Font */
 }
 
-/* Header and Image Styling */
 .header-container {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 1rem; 
+  margin-bottom: 2rem;
 }
 
 .header-image {
-  max-width: 400px; 
-  height: auto; 
-  margin-right: 1rem; 
-  border-radius: 8px; 
-  opacity: 0; 
-  animation: fadeIn 1s forwards; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  box-shadow: 0 4px 10px rgb(0, 0, 0); 
+  max-width: 400px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; 
+      opacity: 1;
   }
 }
 
 .header-image:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading Styling with Slide-In Animation */
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
-/* Heading Styling with Slide-In Animation and Shadow */
 h1 {
-  font-size: 3rem; 
+  font-size: 3rem; /* Larger font size */
   font-weight: 700;
-  color: #4CAF50; 
-  margin: 0;
+  color: #4CAF50;
+  margin: 0.5rem 0;
   animation: slideIn 0.8s ease-out;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.262); 
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px; /* Spacing between letters */
+  text-transform: uppercase; /* Uppercase letters for emphasis */
+  background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  padding: 10px 0; /* Padding for spacing */
+  border-bottom: 4px solid #8BC34A; /* Bottom border */
 }
 
-
-/* Component Image Styling */
-#componentImage {
-  width: 80%; 
-  max-width: 500px; 
-  height: auto; 
-  border-radius: 15px; 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
-  margin: 20px auto; 
-  transition: transform 0.3s ease; 
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-#componentImage:hover {
-  transform: scale(1.05); 
+.nav-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow to buttons */
 }
 
-/* Table Styling */
+.nav-button:hover {
+  background-color: #5ff467;
+  transform: scale(1.05);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
 table.tb {
   width: 100%;
   margin-top: 1.5rem;
@@ -96,18 +113,17 @@ table.tb th {
   background-color: #4CAF50;
   color: white;
   font-weight: bold;
+  text-transform: uppercase; /* Uppercase for table headers */
 }
 
 table.tb td {
   border-top: 1px solid #dddddd;
 }
 
-/* Hover Effect for Table Rows */
 tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Button Styling */
 button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -128,7 +144,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Select and Quantity Input Styling */
 select {
   padding: 0.5rem;
   font-size: 1rem;
@@ -159,27 +174,25 @@ span {
   margin-top: 1rem;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem; 
+      font-size: 2rem; /* Responsive font size */
   }
 
   .header-image {
-    max-width: 100px; 
-  }
-
-  #componentImage {
-    width: 100%; 
+      max-width: 100px; /* Responsive image size */
   }
 
   table.tb,
   select {
-    width: 100%; 
+      width: 100%; /* Full width for small screens */
+  }
+
+  .nav-button {
+      padding: 0.5rem 1rem; /* Adjust button size */
   }
 }
 
-/* Order Form Styling */
 .order-form {
   margin: 20px auto;
   padding: 20px;
@@ -214,7 +227,6 @@ span {
   text-align: left;
 }
 
-/* Table within Order Info */
 table.tb {
   width: 100%;
   border-collapse: collapse;
@@ -231,4 +243,80 @@ table.tb td {
 table.tb th {
   background-color: #4CAF50;
   color: white;
+}
+
+.open-data {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.open-data h3 {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+.open-data input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.open-data button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.open-data button:hover {
+  background-color: #388e3c;
+}
+
+.cocktail-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cocktail-item {
+  width: 280px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 1rem;
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.cocktail-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.cocktail-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cocktail-item h3 {
+  color: #4CAF50; /* Otsikon väri */
+}
+
+.cocktail-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333; /* Tekstin väri */
 }

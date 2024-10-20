@@ -1,25 +1,40 @@
 // OrderInfo.js
-import React from 'react';
+import React, { useContext } from 'react';
+import { OrderContext } from './OrderContext';
 
-const OrderInfo = ({ productName, productPrice, quantity }) => {
-    const totalPrice = productPrice * quantity;
+const OrderInfo = () => {
+    const { orderedDrinks, removeOrder, clearOrders } = useContext(OrderContext);
+    const totalPrice = orderedDrinks.reduce((sum, drink) => sum + drink.totalPrice, 0);
 
     return (
         <div className="order-info">
-            <h3>Order Details</h3>
+            <h3>Tilaustiedot</h3>
             <table className='tb'>
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
+                        <th>Tuote</th>
+                        <th>Määrä</th>
+                        <th>Yhteishinta</th>
+                        <th>Toiminnot</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {orderedDrinks.map((drink, index) => (
+                        <tr key={index}>
+                            <td>{drink.cocktailName}</td>
+                            <td>{drink.quantity}</td>
+                            <td>{drink.totalPrice}€</td>
+                            <td>
+                                <button onClick={() => removeOrder(index)}>Poista</button>
+                            </td>
+                        </tr>
+                    ))}
                     <tr>
-                        <td>{productName}</td>
-                        <td>{quantity}</td>
-                        <td>{totalPrice}€</td>
+                        <td colSpan="2"><strong>Yhteensä</strong></td>
+                        <td><strong>{totalPrice}€</strong></td>
+                        <td>
+                            <button onClick={clearOrders}>Peruuta kaikki</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
